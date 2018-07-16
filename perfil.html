@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="js/perfil.js"></script>
+
+  <title>MADAcademy</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <nav class="navbar fixed-top navbar-expand-lg fixed-top headercolor">
+    <div class="container">
+      <a class="navbar-brand whitetext" href="index.html">MADAcademy</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link whitetext" href="cursos.html">Cursos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link whitetext" href="detalhesdocente.html">Docentes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link whitetext" href="parcerias.html">Parcerias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link whitetext" href="testemunhos.html">Testemunhos</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary btn-block btnlogin" href="backoffice\lite\index.html" id="btnAdmin" style="display: none;">Painel Admin</a>
+        </li>
+
+
+        <!--logout-->
+
+        <li class="nav-item">
+          <a class="btn btn-primary btn-block btnlogin" id="btnLogout" href="index.html">Sair</a>
+        </li>
+
+        <!--
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Other Pages
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                    <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                    <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                    <a class="dropdown-item" href="faq.html">FAQ</a>
+                    <a class="dropdown-item" href="404.html">404</a>
+                    <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                  </div>
+                </li>
+              -->
+      </ul>
+    </div>
+    </div>
+  </nav>
+
+  <header>
+
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2 id="warning"></h2>
+
+  <div id="hideDiv">
+    <div class="container centerdiv">
+      <div class="row profile">
+        <div class="col-md-6 mx-auto">
+          <div class="profile-sidebar">
+
+            <div class="profile-userpic">
+              <img id="currentImg" src="" class="resizeUserImg rounded-circle" alt="">
+
+              <br>
+              <br>
+              <br>
+              <h3 id="currentUser" class="text-center"></h3>
+              <h5 id="currentUserType" class="text-center"></h5>
+            </div>
+
+
+
+
+            <br>
+            <br>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="row profile">
+      <div class="col-md-12">
+        <div class="profile-content">
+          <div>
+            <div class="col-md-12">
+
+              <h4>Mudar foto de perfil</h4>
+              <hr class="my-2">
+              <div class="col-md-4">
+                <input type="url" required placeholder="Novo Link" id="changeImg" class="form-control form-control-line">
+                <a href="" id="changeImgLink">Alterar</a>
+                <br>
+                <br>
+              </div>
+              <h4>Mudar email</h4>
+              <hr class="my-2">
+              <div>
+
+                <div class="col-md-4">
+                  <p id="currentEmail"></p>
+                  <input type="url" required placeholder="Novo Email" id="changeEmail" class="form-control form-control-line">
+                  <a href="" id="changeEmailLink">Alterar</a>
+                </div>
+              </div>
+              <br>
+              <h4>Mudar password</h4>
+              <hr class="my-2">
+              <div>
+
+                <div class="col-md-4">
+                  <p id="currentEmail"></p>
+                  <input type="password" required placeholder="Password Atual" id="currentPass" class="form-control form-control-line">
+                  <br>
+                  <input type="password" required placeholder="Nova Password" id="newPass" class="form-control form-control-line">
+                  <br>
+                  <h6 class="text-center" id="errorMsg" style="display:none;"></h6>
+                  <br>
+                  <br>
+                  <button href="" button type="button" class="btn btn-primary btnlogin " id="changePasswordLink">Alterar Password</button>
+                </div>
+              </div>
+              <br>
+
+
+
+            </div>
+            <br>
+            <br>
+            <br>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <navbar class="navbar py-5 bg-dark navbar-fixed-bottom">
+    <div class="centerdiv">
+      <p class="m-0 text-center text-white">Copyright &copy; MADAcademy 2018</p>
+    </div>
+  </navbar>
+</body>
+
+</html>
