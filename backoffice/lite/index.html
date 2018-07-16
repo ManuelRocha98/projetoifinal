@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <title>Backoffice</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- chartist CSS -->
+    <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
+    <link href="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <!--This page css - Morris CSS -->
+    <link href="../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+
+                            <!-- Light Logo icon -->
+                            <!-- <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> -->
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span>
+
+                            <!-- Light Logo text -->
+                            <!-- <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
+                        </span>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li>
+                            <a class="waves-effect waves-dark" href="index.html" aria-expanded="false">
+                                <i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Adicionar Curso</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false">
+                                <i class="mdi mdi-settings"></i>
+                                <span class="hide-menu">Adicionar Tags</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+            <!-- Bottom points-->
+            <div class="sidebar-footer">
+
+                <!-- item-->
+                <a href="../../index.html" class="link" data-toggle="tooltip" title="Logout">
+                    <i class="mdi mdi-power"></i>
+                </a>
+            </div>
+            <!-- End Bottom points-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor">Adicionar Curso</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active">Adicionar Curso</li>
+                        </ol>
+                    </div>
+
+                </div>
+
+
+                <div class="tab-pane" id="settings" role="tabpanel">
+                    <div class="card-block">
+                        <form class="form-horizontal form-material" id="newCourse">
+                            <div class="form-group">
+                                <label class="col-md-12">Título</label>
+                                <div class="col-md-12">
+                                    <input type="text" id="title" maxlength="30" required placeholder="Ex: Design" class="form-control form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Descrição do curso</label>
+                                <div class="col-md-12">
+                                    <input type="text" maxlength="120" required class="form-control form-control-line" id="desc">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Data de início</label>
+                                <div class="col-md-12">
+                                    <input type="date" required class="form-control form-control-line" id="iniDate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Data de conclusão</label>
+                                <div class="col-md-12">
+                                    <input type="date" required class="form-control form-control-line" id="endDate">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Preço em euros</label>
+                                <div class="col-md-12">
+                                    <input type="number" id="price" placeholder="1000" required min="0,01" max="9999,99" step="0.01" data-number-to-fixed="2"
+                                        data-number-stepfactor="100" class="form-control currency" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Preço especial em euros (membros IPP)</label>
+                                <div class="col-md-12">
+                                    <input type="number" id="specialPrice" placeholder="1000" required min="0,01" max="9999,99" step="0.01" data-number-to-fixed="2"
+                                        data-number-stepfactor="100" class="form-control currency" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Código do formador responsável</label>
+                                <div class="col-md-12">
+                                    <input type="number" id="professorCode" maxlength="4" required class="form-control form-control-line no-spinners">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Instituição parceira</label>
+                                <div class="col-md-12">
+                                    <input type="number" id="partner" maxlength="4" class="form-control form-control-line no-spinners">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label required class="col-md-12">Tag(s) Associadas</label>
+                                <br>
+                                <br>
+                                <div class="col-sm-12">
+                                    <select multiple id="dropdownTags" size="5" class="form-control form-control-line">
+                                        <option></option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-12">Adicionar imagem (opcional)</label>
+                                <div class="col-md-12">
+                                    <input type="url" id="img" placeholder="Link da foto" class="form-control form-control-line no-spinners">
+
+                                </div>
+                            </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-success" id="newCourseButton">Criar Curso</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                <div class="col-lg-12 ">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title" align="center">Utilizadores</h4>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <caption style="font-size:14px">0 -> Administrador; 1 -> Docente; 2 -> Estudante</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Password</th>
+                                            <th scope="col">Tipo de utilizador</th>
+
+                                        </tr>
+                                        <br>
+                                    </thead>
+
+                                    <tbody id="tableValues2">
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer"> © 2018 MADAcademy </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/plugins/bootstrap/js/tether.min.js"></script>
+    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.min.js"></script>
+    <!--Meu JavaScript -->
+    <script src="js/index.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!-- chartist chart -->
+    <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
+    <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../assets/plugins/d3/d3.min.js"></script>
+    <script src="../assets/plugins/c3-master/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="js/dashboard1.js"></script>
+</body>
+
+</html>
